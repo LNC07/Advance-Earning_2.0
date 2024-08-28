@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form, #initial-buttons, #dashboard, #withdrawal-page, #task-page, #daily-task-page, #video-earning-page {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #218838;
+}
+
+#dashboard, #withdrawal-page, #task-page, #daily-task-page, #video-earning-page {
+    text-align: center;
+    overflow-y: auto;
+}

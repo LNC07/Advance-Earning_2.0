@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earning Web App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Initial Buttons: Registration & Login -->
+        <div id="initial-buttons">
+            <button id="register-btn">Registration</button>
+            <button id="login-btn">Login</button>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="registration-form" class="form-container" style="display:none;">
+            <h2>Register</h2>
+            <form id="signup-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Create Account</button>
+            </form>
+            <button id="back-btn">Back</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" class="form-container" style="display:none;">
+            <h2>Login</h2>
+            <form id="signin-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Main App (Dashboard) -->
+        <div id="dashboard" class="main-container" style="display:none;">
+            <h2>Account: <span id="user-email"></span></h2>
+            <div id="dashboard-buttons">
+                <button id="balance-btn">Balance</button>
+                <button id="withdraw-btn">Withdrawal</button>
+            </div>
+            <div id="task-buttons">
+                <button id="task-btn">Task</button>
+                <button id="daily-task-btn">Daily Task</button>
+                <button id="video-earning-btn">Video Earning</button>
+            </div>
+        </div>
+
+        <!-- Withdrawal Page -->
+        <div id="withdrawal-page" class="form-container" style="display:none;">
+            <h2>Withdrawal</h2>
+            <form id="withdrawal-form">
+                <select id="payment-method" required>
+                    <option value="" disabled selected>Select Payment Method</option>
+                    <option value="bkash">Bkash</option>
+                    <option value="nagad">Nagad</option>
+                    <option value="usdt">USDT Binance</option>
+                </select>
+                <input type="text" id="account-info" placeholder="Account Number/Address" required>
+                <button type="submit">Submit</button>
+            </form>
+            <button id="back-to-dashboard">Back</button>
+        </div>
+
+        <!-- Task Page -->
+        <div id="task-page" class="form-container" style="display:none;">
+            <h2>Task</h2>
+            <button id="back-to-dashboard-from-task">Back</button>
+        </div>
+
+        <!-- Video Earning Page -->
+        <div id="video-earning-page" class="form-container" style="display:none;">
+            <h2>Video Earning</h2>
+            <button id="back-to-dashboard-from-video-earning">Back</button>
+        </div>
+
+        <!-- Daily Task Page -->
+        <div id="daily-task-page" class="form-container" style="display:none;">
+            <h2>Daily Task</h2>
+            <button id="back-to-dashboard-from-daily-task">Back</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
