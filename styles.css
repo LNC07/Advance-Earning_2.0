@@ -10,10 +10,10 @@ body {
 }
 
 #app {
-    width: 80vw; /* 80% বড় করা হয়েছে */
-    height: 80vh; /* 80% বড় করা হয়েছে */
+    width: 100vw; /* 100% বড় করা হয়েছে */
+    height: 100vh; /* 100% বড় করা হয়েছে */
     background: #fff;
-    padding: 16px; /* প্যাডিং 80% বড় করা হয়েছে */
+    padding: 20px; /* প্যাডিং 100% বড় করা হয়েছে */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -32,23 +32,23 @@ form, #initial-buttons, #dashboard, #withdrawal-page, #task-page, #daily-task-pa
 
 input, select {
     width: 100%; /* পূর্ণ প্রস্থ */
-    max-width: 240px; /* সর্বোচ্চ প্রস্থ 80% বড় করা হয়েছে */
-    margin-bottom: 16px; /* ব্যবধান 80% বড় করা হয়েছে */
-    padding: 8px; /* প্যাডিং 80% বড় করা হয়েছে */
+    max-width: 300px; /* সর্বোচ্চ প্রস্থ 100% বড় করা হয়েছে */
+    margin-bottom: 20px; /* ব্যবধান 100% বড় করা হয়েছে */
+    padding: 10px; /* প্যাডিং 100% বড় করা হয়েছে */
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 button {
     width: 100%; /* পূর্ণ প্রস্থ */
-    max-width: 240px; /* সর্বোচ্চ প্রস্থ 80% বড় করা হয়েছে */
-    padding: 8px; /* প্যাডিং 80% বড় করা হয়েছে */
+    max-width: 300px; /* সর্বোচ্চ প্রস্থ 100% বড় করা হয়েছে */
+    padding: 10px; /* প্যাডিং 100% বড় করা হয়েছে */
     border: none;
     border-radius: 5px;
     background: #28a745;
     color: #fff;
     cursor: pointer;
-    margin-bottom: 16px; /* বাটনগুলির মধ্যে ব্যবধান 80% বড় করা হয়েছে */
+    margin-bottom: 20px; /* বাটনগুলির মধ্যে ব্যবধান 100% বড় করা হয়েছে */
     transition: background 0.3s, transform 0.2s; /* হোভার ইফেক্টের জন্য ট্রানজিশন */
 }
 
@@ -60,5 +60,5 @@ button:hover {
 #dashboard, #withdrawal-page, #task-page, #daily-task-page, #video-earning-page {
     text-align: center;
     overflow-y: auto;
-    padding: 16px; /* প্যাডিং 80% বড় করা হয়েছে */
+    padding: 20px; /* প্যাডিং 100% বড় করা হয়েছে */
 }
