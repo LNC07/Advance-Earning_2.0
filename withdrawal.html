@@ -1,0 +1,16 @@
+<!-- Withdrawal Page -->
+<div id="withdrawal-page" class="form-container" style="display:none;">
+    <h2>Withdrawal</h2>
+    <form id="withdrawal-form">
+        <select id="payment-method" required>
+            <option value="" disabled selected>Select Payment Method</option>
+            <option value="bkash">Bkash</option>
+            <option value="nagad">Nagad</option>
+            <option value="usdt">USDT Binance</option>
+        </select>
+        <input type="text" id="account-info" placeholder="Account Number/Address" required>
+        <input type="number" id="withdraw-amount" placeholder="Amount" required> <!-- Amount Field Added -->
+        <button type="submit">Submit</button>
+    </form>
+    <button id="back-to-dashboard">Back</button>
+</div>
