@@ -3,87 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earning Web App</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #app {
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        form, #initial-buttons, #dashboard, #withdrawal-page, #task-page, #daily-task-page, #video-earning-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input, select {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #28a745;
+            color: #fff;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+
+        #dashboard, #withdrawal-page, #task-page, #daily-task-page, #video-earning-page {
+            text-align: center;
+            overflow-y: auto;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <!-- Initial Buttons: Registration & Login -->
-        <div id="initial-buttons">
-            <button id="register-btn">Registration</button>
-            <button id="login-btn">Login</button>
-        </div>
+        <div id="dashboard">
+            <h2>Welcome, <span id="user-email"></span></h2>
+            <p>Your Balance: <span id="balance"></span> points</p>
 
-        <!-- Registration Form -->
-        <div id="registration-form" class="form-container" style="display:none;">
-            <h2>Register</h2>
-            <form id="signup-form">
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit">Create Account</button>
-            </form>
-            <button id="back-btn">Back</button>
-        </div>
-
-        <!-- Login Form -->
-        <div id="login-form" class="form-container" style="display:none;">
-            <h2>Login</h2>
-            <form id="signin-form">
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-
-        <!-- Main App (Dashboard) -->
-        <div id="dashboard" class="main-container" style="display:none;">
-            <h2>Account: <span id="user-email"></span></h2>
-            <div id="dashboard-buttons">
-                <button id="balance-btn">Balance</button>
-                <button id="withdraw-btn">Withdrawal</button>
-            </div>
-            <div id="task-buttons">
-                <button id="task-btn">Task</button>
-                <button id="daily-task-btn">Daily Task</button>
-                <button id="video-earning-btn">Video Earning</button>
-            </div>
-        </div>
-
-        <!-- Withdrawal Page -->
-        <div id="withdrawal-page" class="form-container" style="display:none;">
-            <h2>Withdrawal</h2>
-            <form id="withdrawal-form">
-                <select id="payment-method" required>
-                    <option value="" disabled selected>Select Payment Method</option>
-                    <option value="bkash">Bkash</option>
-                    <option value="nagad">Nagad</option>
-                    <option value="usdt">USDT Binance</option>
-                </select>
-                <input type="text" id="account-info" placeholder="Account Number/Address" required>
-                <button type="submit">Submit</button>
-            </form>
-            <button id="back-to-dashboard">Back</button>
-        </div>
-
-        <!-- Task Page -->
-        <div id="task-page" class="form-container" style="display:none;">
-            <h2>Task</h2>
-            <button id="back-to-dashboard-from-task">Back</button>
-        </div>
-
-        <!-- Video Earning Page -->
-        <div id="video-earning-page" class="form-container" style="display:none;">
-            <h2>Video Earning</h2>
-            <button id="back-to-dashboard-from-video-earning">Back</button>
-        </div>
-
-        <!-- Daily Task Page -->
-        <div id="daily-task-page" class="form-container" style="display:none;">
-            <h2>Daily Task</h2>
-            <button id="back-to-dashboard-from-daily-task">Back</button>
+            <button id="task-btn">Task</button>
+            <button id="daily-task-btn">Daily Task</button>
+            <button id="video-earning-btn">Video Earning</button>
+            <button id="withdraw-btn">Withdraw</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Load user data from localStorage
+        const email = localStorage.getItem('email');
+        let balance = parseInt(localStorage.getItem('balance')) || 0;
+
+        // Display user email and balance
+        document.getElementById('user-email').innerText = email;
+        document.getElementById('balance').innerText = balance;
+
+        // Task Button Click
+        document.getElementById('task-btn').addEventListener('click', function() {
+            window.location.href = 'task.html';
+        });
+
+        // Daily Task Button Click
+        document.getElementById('daily-task-btn').addEventListener('click', function() {
+            window.location.href = 'daily-task.html';
+        });
+
+        // Video Earning Button Click
+        document.getElementById('video-earning-btn').addEventListener('click', function() {
+            window.location.href = 'video-earning.html';
+        });
+
+        // Withdraw Button Click
+        document.getElementById('withdraw-btn').addEventListener('click', function() {
+            window.location.href = 'withdraw.html';
+        });
+    </script>
 </body>
 </html>
