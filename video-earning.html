@@ -36,6 +36,21 @@
 </head>
 <body>
     <h2>Video Earning</h2>
+    <button id="video-earning-btn">Video</button>
     <button onclick="window.location.href='index.html';">Back to Dashboard</button>
+
+    <script>
+        // Load balance from localStorage
+        let balance = parseInt(localStorage.getItem('balance')) || 0;
+
+        document.getElementById('video-earning-btn').addEventListener('click', function() {
+            // Add 10 points to the balance
+            balance += 10;
+            localStorage.setItem('balance', balance);
+
+            // Open the external link
+            window.open('https://www.cpmrevenuegate.com/vax7rra8?key=7d4fa6b59698db96a49125b0a38f68d7', '_blank');
+        });
+    </script>
 </body>
 </html>
