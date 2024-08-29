@@ -1,16 +1,71 @@
-<!-- Withdrawal Page -->
-<div id="withdrawal-page" class="form-container" style="display:none;">
-    <h2>Withdrawal</h2>
-    <form id="withdrawal-form">
-        <select id="payment-method" required>
-            <option value="" disabled selected>Select Payment Method</option>
-            <option value="bkash">Bkash</option>
-            <option value="nagad">Nagad</option>
-            <option value="usdt">USDT Binance</option>
-        </select>
-        <input type="text" id="account-info" placeholder="Account Number/Address" required>
-        <input type="number" id="withdraw-amount" placeholder="Amount" required> <!-- Amount Field Added -->
-        <button type="submit">Submit</button>
-    </form>
-    <button id="back-to-dashboard">Back</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s, transform 0.2s;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h2>Withdraw Points</h2>
+    <input type="number" id="withdraw-amount" placeholder="Enter amount to withdraw">
+    <button id="withdraw-btn">Withdraw</button>
+    <button onclick="window.location.href='index.html';">Back to Dashboard</button>
+
+    <script>
+        // Load balance from localStorage
+        let balance = parseInt(localStorage.getItem('balance')) || 0;
+
+        document.getElementById('withdraw-btn').addEventListener('click', function() {
+            const amount = parseInt(document.getElementById('withdraw-amount').value);
+            if (amount > 0 && amount <= balance) {
+                balance -= amount;
+                localStorage.setItem('balance', balance);
+                alert('Withdrawal successful!');
+            } else {
+                alert('Insufficient balance or invalid amount!');
+            }
+        });
+    </script>
+</body>
+</html>
