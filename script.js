@@ -59,31 +59,34 @@ document.getElementById('withdraw-btn').addEventListener('click', function() {
     document.getElementById('withdrawal-page').style.display = 'block';
 });
 
-// Back to Dashboard from Withdrawal
-document.getElementById('back-to-dashboard').addEventListener('click', function() {
-    document.getElementById('withdrawal-page').style.display = 'none';
-    document.getElementById('dashboard').style.display = 'block';
-});
-
 // Withdrawal Form Submission
 document.getElementById('withdrawal-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const method = document.getElementById('payment-method').value;
     const accountInfo = document.getElementById('account-info').value;
-    alert(`Withdrawal request submitted for ${method} to account: ${accountInfo}`);
+    const amount = document.getElementById('withdraw-amount').value;
+    alert(`Withdrawal request submitted for ${method} to account: ${accountInfo} for amount: ${amount}`);
     document.getElementById('withdrawal-page').style.display = 'none';
     document.getElementById('dashboard').style.display = 'block';
 });
 
-// Task, Daily Task, and Video Earning buttons can have similar event listeners to perform specific tasks
+// Task Button Click - Opens Task Web App
 document.getElementById('task-btn').addEventListener('click', function() {
-    window.location.href = 'task.html'; // Redirect to task web app
+    window.location.href = 'task.html'; // Redirect to task page
 });
 
+// Daily Task Button Click - Opens Daily Task Web App
 document.getElementById('daily-task-btn').addEventListener('click', function() {
-    window.location.href = 'daily-task.html'; // Redirect to daily task web app
+    window.location.href = 'daily-task.html'; // Redirect to daily task page
 });
 
+// Video Earning Button Click - Opens Video Earning Web App
 document.getElementById('video-earning-btn').addEventListener('click', function() {
-    window.location.href = 'video-earning.html'; // Redirect to video earning web app
+    window.location.href = 'video-earning.html'; // Redirect to video earning page
+});
+
+// Back to Dashboard from Withdrawal
+document.getElementById('back-to-dashboard').addEventListener('click', function() {
+    document.getElementById('withdrawal-page').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
 });
