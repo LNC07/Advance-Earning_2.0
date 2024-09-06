@@ -86,18 +86,30 @@
     </div>
 
     <script>
+        // Load balance from localStorage
+        let balance = parseInt(localStorage.getItem('balance')) || 0;
+
         document.getElementById('withdraw-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const method = document.getElementById('method').value;
-            const amount = document.getElementById('amount').value;
+            const amount = parseInt(document.getElementById('amount').value);
             const accountNumber = document.getElementById('account-number').value;
             
+            // Check if user has enough balance
             if (amount < 1000) {
                 alert('Minimum withdrawal amount is 1000 points.');
                 return;
             }
 
+            if (amount > balance) {
+                alert('Insufficient balance. You have ' + balance + ' points.');
+                return;
+            }
+
             // Handle successful submission
+            balance -= amount; // Deduct the amount from balance
+            localStorage.setItem('balance', balance); // Update the balance in localStorage
+            
             alert(`Withdrawal request submitted successfully!\nMethod: ${method}\nAmount: ${amount} Points\nAccount: ${accountNumber}`);
         });
     </script>
